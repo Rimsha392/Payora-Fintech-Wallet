@@ -1,0 +1,88 @@
+.sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgba(62, 40, 92, 0.38);
+  animation: sheet-fade 0.2s ease;
+}
+
+.sheet {
+  width: 100%;
+  max-width: 430px;
+  max-height: 88dvh;
+  overflow-y: auto;
+  padding: 22px 22px max(26px, env(safe-area-inset-bottom));
+  border-radius: 28px 28px 0 0;
+  background: var(--bg);
+  animation: sheet-up 0.26s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.sheet__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.sheet__title {
+  font-size: 22px;
+}
+
+.sheet__rows {
+  margin: 0;
+  padding: 6px 18px;
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.sheet__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 12px 0;
+  font-size: 14.5px;
+}
+
+.sheet__row + .sheet__row {
+  border-top: 1px solid var(--border);
+}
+
+.sheet__row dt {
+  color: var(--text-2);
+}
+
+.sheet__row dd {
+  margin: 0;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.sheet__row--total dd,
+.sheet__row--total dt {
+  color: var(--deep);
+  font-weight: 600;
+}
+
+.sheet__note {
+  margin: 14px 0 18px;
+  font-size: 13px;
+  text-align: center;
+}
+
+@keyframes sheet-up {
+  from {
+    transform: translateY(24px);
+    opacity: 0;
+  }
+}
+
+@keyframes sheet-fade {
+  from {
+    opacity: 0;
+  }
+}

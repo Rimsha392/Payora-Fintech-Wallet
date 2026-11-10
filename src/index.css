@@ -1,0 +1,268 @@
+/* ============================================================
+   Payora — design tokens, base styles and shared primitives
+   ============================================================ */
+
+:root {
+  /* Brand */
+  --primary: #8a63bf;
+  --deep: #6c4c92;
+  --lavender: #e8ddf7;
+
+  /* Surfaces */
+  --bg: #fbf2e4;
+  --surface: #fffaf0;
+  --outer: #f1e4cf; /* backdrop shown beside the app on wide screens */
+  --border: #e1d3f2;
+
+  /* Text */
+  --text: #6e4f96;
+  --text-2: #8b76ac;
+  --on-primary: #fffaf0;
+
+  /* Feedback (kept off green on purpose) */
+  --error: #b0406a;
+
+  /* Type */
+  --font-display: 'Unlock', 'Rockwell', 'Georgia', serif;
+  --font-body: 'Source Serif 4', 'Georgia', 'Times New Roman', serif;
+
+  /* Shape */
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --shadow-float: 0 10px 28px rgba(108, 76, 146, 0.16);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--outer);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ---------- App shell ---------- */
+
+.app {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  background: var(--bg);
+}
+
+@media (min-width: 560px) {
+  .app {
+    box-shadow: 0 0 0 1px rgba(108, 76, 146, 0.08), 0 30px 80px rgba(108, 76, 146, 0.16);
+  }
+}
+
+.app__main {
+  min-height: 100dvh;
+}
+
+.app__main:focus {
+  outline: none;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  padding: max(28px, env(safe-area-inset-top)) 22px max(20px, env(safe-area-inset-bottom));
+}
+
+/* Scrolling content area above a floating bottom nav */
+.screen__body {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 28px;
+}
+
+/* ---------- Shared type ---------- */
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--deep);
+  letter-spacing: 0.005em;
+}
+
+.muted {
+  color: var(--text-2);
+}
+
+/* ---------- Surfaces ---------- */
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+}
+
+/* ---------- Form fields ---------- */
+
+.field-input {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--deep);
+  font-size: 15px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.field-input::placeholder {
+  color: var(--text-2);
+  opacity: 0.85;
+}
+
+.field-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(138, 99, 191, 0.2);
+}
+
+.field-input[aria-invalid='true'] {
+  border-color: var(--error);
+}
+
+.tx-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 54px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--primary);
+  color: var(--on-primary);
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+  background: #7d57b3;
+}
+
+.btn:active {
+  transform: scale(0.99);
+}
+
+.btn:focus-visible {
+  outline-color: var(--deep);
+}
+
+.link-btn {
+  align-self: center;
+  padding: 10px 14px;
+  border: 0;
+  background: none;
+  color: var(--deep);
+  font-size: 15px;
+}
+
+.link-btn:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.icon-btn {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--lavender);
+  color: var(--deep);
+  transition: background-color 0.15s ease;
+}
+
+.icon-btn:hover {
+  background: #dccdf2;
+}
+
+/* Lavender circle that holds an icon */
+.icon-badge {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--lavender);
+  color: var(--deep);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
