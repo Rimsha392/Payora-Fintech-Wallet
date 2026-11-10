@@ -124,3 +124,10 @@ Developed as part of a UI/UX design and frontend development internship portfoli
 ### Transfer Successful
 ![Payora Transfer Success Screen](screenshots/transfer-success.png)
 
+
+## Figma Design File
+
+Explore the complete Payora UI/UX design, including the mobile wallet screens and reusable design system.
+
+[View Payora — Figma Design File](https://www.figma.com/design/CQUH9QnFKgiJNu0m2978t9/Fintech-Wallet-%E2%80%94-Design-System---Mobile-UI?node-id=1-2&t=MNZ2LBxb1uRgQlJz-1)
+
