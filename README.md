@@ -110,3 +110,17 @@ The core wallet interface and simulated transfer flow have been implemented. The
 ## Acknowledgements
 
 Developed as part of a UI/UX design and frontend development internship portfolio project.
+## Screenshots
+
+### Home / Balance Overview
+![Payora Home Screen](screenshots/home.png)
+
+### Send Money
+![Payora Send Money Screen](screenshots/send-money.png)
+
+### Transaction History
+![Payora Transaction History](screenshots/transaction-history.png)
+
+### Transfer Successful
+![Payora Transfer Success Screen](screenshots/transfer-success.png)
+
