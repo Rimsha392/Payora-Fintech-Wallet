@@ -41,13 +41,13 @@ The interface was designed in Figma using reusable components, color styles, typ
 1. Clone the repository:
 
    ```bash
-   git clone YOUR_GITHUB_REPOSITORY_URL
+   git clone https://github.com/Rimsha392/Payora-Fintech-Wallet.git
    ```
 
 2. Navigate into the project folder:
 
    ```bash
-   cd payora_wallet
+   cd Payora-Fintech-Wallet
    ```
 
 3. Install dependencies:
@@ -76,7 +76,7 @@ The interface was designed in Figma using reusable components, color styles, typ
 ## Project Structure
 
 ```text
-payora_wallet/
+Payora-Fintech-Wallet/
 ├── public/
 ├── src/
 │   ├── assets/
